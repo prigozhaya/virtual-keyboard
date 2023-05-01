@@ -1,13 +1,13 @@
 const keyboard = {
   keysEn: [
-    [ "`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "backspace"],
+    [ "`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "backspace", "Delete"],
     ["Tab", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]"],
     ["capsLock", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "Enter"],
     [ "shift", "z", "x", "c", "v", "b", "n", "m", ",", ".", "▲", "/", "?", "shift", ],
     ["ctrl", "alt", " ", "◄", "▼", "►"],
   ],
   keysRu: [
-    [ "`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "backspace" ],
+    [ "`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "backspace", "Delete" ],
     ["Tab", "й", "ц", "у", "к", "е", "н", "г", "ш", "щ", "з", "[", "]"],
     [ "capsLock", "ф", "ы", "в", "а", "п", "р", "о", "л", "д", "ж", "э", ";", "Enter" ],
     [ "shift", "я", "ч", "с", "м", "и", "т", "ь", "б", "ю", ",", "▲", ".", "/", "?", "shift" ],
@@ -108,6 +108,12 @@ const keyboard = {
     switch (keyValue) {
       case 'Tab':
         keyboard.inputField.value +='   ';
+        break;
+      case 'Delete':
+    const select = document.getElementById("input-field");
+
+        console.log(select.selectionStrart);
+        keyboard.inputField.value =keyboard.inputField.value.slice(0, -1);
         break;
       case 'Enter':
         keyboard.inputField.value +=`
