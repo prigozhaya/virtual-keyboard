@@ -51,7 +51,11 @@ class Keyboard {
                 keyboard.capsLock = keyboard.capsLock === false ? true : false;
                 keyboardContainer.remove();
                 app.appendChild(keyboard.render());
-                keyElement.classList.toggle("active");
+                if(keyboard.capsLock===true){
+                    document.getElementById("Shift").classList.add("active");
+                }else{
+                    document.getElementById("Shift").classList.remove("active");
+                }
               }
             });
           }
